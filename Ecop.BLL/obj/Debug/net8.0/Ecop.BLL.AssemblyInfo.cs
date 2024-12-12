@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ecop.BLL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7ad9b045b3f54a2bbbe0a366164a38019d77334")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ecop.BLL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ecop.BLL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

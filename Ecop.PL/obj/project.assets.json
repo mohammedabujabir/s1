@@ -8165,11 +8165,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Technipal\\source\\repos\\Ecop\\Ecop.PL\\Ecop.PL.csproj",
+      "projectUniqueName": "C:\\Users\\Technipal\\source\\s1\\Ecop.PL\\Ecop.PL.csproj",
       "projectName": "Ecop.PL",
-      "projectPath": "C:\\Users\\Technipal\\source\\repos\\Ecop\\Ecop.PL\\Ecop.PL.csproj",
+      "projectPath": "C:\\Users\\Technipal\\source\\s1\\Ecop.PL\\Ecop.PL.csproj",
       "packagesPath": "C:\\Users\\Technipal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Technipal\\source\\repos\\Ecop\\Ecop.PL\\obj\\",
+      "outputPath": "C:\\Users\\Technipal\\source\\s1\\Ecop.PL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Technipal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8187,8 +8187,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Technipal\\source\\repos\\Ecop\\Ecop.BLL\\Ecop.BLL.csproj": {
-              "projectPath": "C:\\Users\\Technipal\\source\\repos\\Ecop\\Ecop.BLL\\Ecop.BLL.csproj"
+            "C:\\Users\\Technipal\\source\\s1\\Ecop.BLL\\Ecop.BLL.csproj": {
+              "projectPath": "C:\\Users\\Technipal\\source\\s1\\Ecop.BLL\\Ecop.BLL.csproj"
             }
           }
         }

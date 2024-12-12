@@ -6,30 +6,38 @@ using System.Reflection.Emit;
 
 namespace Ecop.DAL.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
+        public DbSet<Citizen> Citizens { get; set; }
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<Court> Courts { get; set; }
+        public DbSet<Judge> Judges { get; set; }
+        public DbSet<Policeman> Policemans { get; set; }
+        public DbSet<TrafficViolation> TrafficViolations { get; set; }
+        public DbSet<CourtDecisions> CourtDecisions { get; set; }
+        public DbSet<PolicemanDecision> PolicemanDecisions { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-
+          
 
             builder.Entity<Car>()
              .HasOne(c => c.Citizen)  // علاقة "One-to-Many" من Car إلى Citizen
              .WithMany(citizen => citizen.Cars)  // كل Citizen يمكنه امتلاك العديد من السيارات
-             .HasForeignKey(c => c.CitizenId);
+             .HasForeignKey(c => c.CitizenId).OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<TrafficViolation>()
             .HasOne(c => c.Citizen)  // الشكوى تكون مرتبطة بمواطن واحد
             .WithMany(c => c.TrafficViolations)  // كل مواطن يمكنه تقديم العديد من الشكاوى
-            .HasForeignKey(c => c.CitizenId);  // المفتاح الأجنبي الذي يشير إلى المواطن
+            .HasForeignKey(c => c.CitizenId).OnDelete(DeleteBehavior.Cascade);  // المفتاح الأجنبي الذي يشير إلى المواطن
             builder.Entity<PolicemanDecision>()
               .HasOne(d => d.Policeman)  // القرار مرتبط بشرطي واحد فقط
               .WithMany(o => o.Decisions)  // الشرطي يمكنه تقديم عدة قرارات
-              .HasForeignKey(d => d.PolicemanDecisionId).OnDelete(DeleteBehavior.Restrict);  // المفتاح الأجنبي المرتبط بالشرطي
+              .HasForeignKey(d => d.PolicemanDecisionId).OnDelete(DeleteBehavior.Cascade);  // المفتاح الأجنبي المرتبط بالشرطي
             builder.Entity<TrafficViolation>()
                .HasOne(v => v.Decision)  // كل مخالفة مرتبطة بقرار واحد فقط
                .WithOne(d => d.TrafficViolation)  // وكل قرار مرتبط بمخالفة واحدة فقط
@@ -46,7 +54,7 @@ namespace Ecop.DAL.Data
             builder.Entity<CourtDecisions>()
                 .HasOne(jd => jd.Court)  // القرار مرتبط بمحكمة واحدة فقط
                 .WithMany(c => c.CourtDecisions)  // المحكمة يمكنها إصدار عدة قرارات
-                .HasForeignKey(jd => jd.Courtid).OnDelete(DeleteBehavior.Restrict);  // المفتاح الأجنبي المرتبط بالمحكمة
+                .HasForeignKey(jd => jd.Courtid).OnDelete(DeleteBehavior.Cascade); // المفتاح الأجنبي المرتبط بالمحكمة
             builder.Entity<PolicemanDecision>()
           .HasOne(pd => pd.CourtDecision)  // كل قرار شرطي مرتبط بقرار محكمة واحد فقط
           .WithOne(cd => cd.PoliceDecision)  // وكل قرار محكمة مرتبط بقرار شرطي واحد فقط
@@ -69,17 +77,32 @@ namespace Ecop.DAL.Data
             builder.Entity<Judge>()
             .HasMany(j => j.CourtDecisions)  // القاضي يمكن أن يحكم في العديد من المخالفات
             .WithOne(v => v.Judge)  // كل مخالفة تتعلق بقاضي واحد فقط
-            .HasForeignKey(v => v.JudgeId).OnDelete(DeleteBehavior.Restrict); // المفتاح الأجنبي في جدول المخالفات
+            .HasForeignKey(v => v.JudgeId).OnDelete(DeleteBehavior.Cascade); // المفتاح الأجنبي في جدول المخالفات
+
+            // تعريف العلاقة بين Citizen و ApplicationUser
+            builder.Entity<Citizen>()
+                .HasOne(c => c.User)
+                .WithMany() // إذا لم يكن هناك قائمة مواطنين في المستخدم
+                .HasForeignKey(c => c.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<Policeman>()
+               .HasOne(c => c.User)
+               .WithMany() // إذا لم يكن هناك قائمة مواطنين في المستخدم
+               .HasForeignKey(c => c.UserId)
+               .OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<Judge>()
+             .HasOne(c => c.User)
+             .WithMany() // إذا لم يكن هناك قائمة مواطنين في المستخدم
+             .HasForeignKey(c => c.UserId)
+             .OnDelete(DeleteBehavior.Cascade);
+
+
+            // استدعاء Seed Data
+            SeedData.Initialize(builder);
 
         }
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-        public DbSet<Citizen> Citizens { get; set; }
-        public DbSet<Car> Cars { get; set; }
-        public DbSet<Court> Courts { get; set; }
-        public DbSet<Judge> Judges { get; set; }
-        public DbSet<Policeman> Policemans { get; set; }
-        public DbSet<TrafficViolation> TrafficViolations { get; set; }
-        public DbSet<CourtDecisions> CourtDecisions { get; set; }
-        public DbSet<PolicemanDecision> PolicemanDecisions { get; set; }
+
+
     }
 }

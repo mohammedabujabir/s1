@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Technipal\\source\\repos\\Ecop\\Ecop.DAL\\Ecop.DAL.csproj": {}
+    "C:\\Users\\Technipal\\source\\s1\\Ecop.DAL\\Ecop.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Technipal\\source\\repos\\Ecop\\Ecop.DAL\\Ecop.DAL.csproj": {
+    "C:\\Users\\Technipal\\source\\s1\\Ecop.DAL\\Ecop.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Technipal\\source\\repos\\Ecop\\Ecop.DAL\\Ecop.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Technipal\\source\\s1\\Ecop.DAL\\Ecop.DAL.csproj",
         "projectName": "Ecop.DAL",
-        "projectPath": "C:\\Users\\Technipal\\source\\repos\\Ecop\\Ecop.DAL\\Ecop.DAL.csproj",
+        "projectPath": "C:\\Users\\Technipal\\source\\s1\\Ecop.DAL\\Ecop.DAL.csproj",
         "packagesPath": "C:\\Users\\Technipal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Technipal\\source\\repos\\Ecop\\Ecop.DAL\\obj\\",
+        "outputPath": "C:\\Users\\Technipal\\source\\s1\\Ecop.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Technipal\\AppData\\Roaming\\NuGet\\NuGet.Config",

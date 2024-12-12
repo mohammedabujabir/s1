@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Ecop.DAL
-build_property.ProjectDir = C:\Users\Technipal\source\repos\Ecop\Ecop.DAL\
+build_property.ProjectDir = C:\Users\Technipal\source\s1\Ecop.DAL\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

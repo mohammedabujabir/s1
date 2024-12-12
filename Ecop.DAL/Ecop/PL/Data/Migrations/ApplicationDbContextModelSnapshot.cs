@@ -22,6 +22,193 @@ namespace Ecop.PL.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Ecop.DAL.Models.ApplicationUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Address")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FullName")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "922a9ac4-70b2-49bd-b6f2-8901e99b9326",
+                            Email = "admin@example.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@Gmail.COM",
+                            NormalizedUserName = "ADMINUSER",
+                            PasswordHash = "Admin@123",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "77672ab1-9fc3-4d1f-beec-825e1991bc43",
+                            TwoFactorEnabled = false,
+                            UserName = "AdminUser"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "fdcd7773-2894-4e98-8327-66d017bccd14",
+                            Email = "citizen1@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "CITIZEN1@Gmail.COM",
+                            NormalizedUserName = "CITIZENUSER1",
+                            PasswordHash = "Citizen@123",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "c6b1ffe4-9ef5-43b0-a560-de9fdf0e1a61",
+                            TwoFactorEnabled = false,
+                            UserName = "CitizenUser1"
+                        },
+                        new
+                        {
+                            Id = "3",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "fc36ce6f-9de8-47f3-82ba-a51d772e3dc7",
+                            Email = "citizen@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "CITIZEN2@Gmail.COM",
+                            NormalizedUserName = "CITIZENUSER2",
+                            PasswordHash = "Citizen@123",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "7dec9742-e64a-49ad-9234-0a740e238282",
+                            TwoFactorEnabled = false,
+                            UserName = "CitizenUser2"
+                        },
+                        new
+                        {
+                            Id = "4",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "0d4cddad-9d3a-41b2-8abb-250804d0283a",
+                            Email = "police1@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "POLICE1@Gmail.COM",
+                            NormalizedUserName = "POLICEUSER1",
+                            PasswordHash = "Police@123",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "f6681f13-27b2-40d1-a7f2-40c9c8c52ade",
+                            TwoFactorEnabled = false,
+                            UserName = "PoliceUser1"
+                        },
+                        new
+                        {
+                            Id = "5",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "e3023d91-5901-4d21-92e1-b4368edcbdfd",
+                            Email = "police2@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "POLICE2@Gmail.COM",
+                            NormalizedUserName = "POLICEUSER2",
+                            PasswordHash = "Police@123",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "cabdf74c-46a3-4ce4-a2f3-d93d1ede9907",
+                            TwoFactorEnabled = false,
+                            UserName = "PoliceUser2"
+                        },
+                        new
+                        {
+                            Id = "6",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "09b7f8bb-ac54-42e0-9d55-0c3ca5f65cc2",
+                            Email = "judge1@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "JUDGE1@Gmail.COM",
+                            NormalizedUserName = "JUDGEUSER1",
+                            PasswordHash = "Judge@123",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "b8adfad8-ab9b-45e5-b7aa-4be8439fec6d",
+                            TwoFactorEnabled = false,
+                            UserName = "JudgeUser1"
+                        },
+                        new
+                        {
+                            Id = "7",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "249f9a64-9eaa-4951-83b8-4eee13e26bae",
+                            Email = "judge2@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "JUDGE2@Gmail.COM",
+                            NormalizedUserName = "JUDGEUSER2",
+                            PasswordHash = "Judge@123",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "9e0411d0-d39e-4571-b59a-f6b9366ed4a7",
+                            TwoFactorEnabled = false,
+                            UserName = "JudgeUser2"
+                        });
+                });
+
             modelBuilder.Entity("Ecop.DAL.Models.Car", b =>
                 {
                     b.Property<int>("Id")
@@ -89,6 +276,30 @@ namespace Ecop.PL.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Citizens");
+
+                    b.HasData(
+                        new
+                        {
+                            CitizenId = 1,
+                            Address = "jenin",
+                            Camera_id = "CAM123",
+                            Email = "mohammed@gmail.com",
+                            Name = "Mohammed",
+                            Password = "Mohammed@123",
+                            Phone = "0568089936",
+                            UserId = "2"
+                        },
+                        new
+                        {
+                            CitizenId = 2,
+                            Address = "jenin",
+                            Camera_id = "CAM123",
+                            Email = "noor@gmail.com",
+                            Name = "Noor",
+                            Password = "Noor@123",
+                            Phone = "0568086536",
+                            UserId = "3"
+                        });
                 });
 
             modelBuilder.Entity("Ecop.DAL.Models.Court", b =>
@@ -204,6 +415,28 @@ namespace Ecop.PL.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Judges");
+
+                    b.HasData(
+                        new
+                        {
+                            JudgeId = 1,
+                            Address = "jenin",
+                            Email = "hadi@gmail.com",
+                            Name = "Hadi",
+                            Password = "Hadi@123",
+                            Phone = "0598086536",
+                            UserId = "6"
+                        },
+                        new
+                        {
+                            JudgeId = 2,
+                            Address = "nablus",
+                            Email = "braa@gmail.com",
+                            Name = "Braa",
+                            Password = "Braa@123",
+                            Phone = "0528086536",
+                            UserId = "7"
+                        });
                 });
 
             modelBuilder.Entity("Ecop.DAL.Models.Policeman", b =>
@@ -243,6 +476,28 @@ namespace Ecop.PL.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Policemans");
+
+                    b.HasData(
+                        new
+                        {
+                            PolicemanId = 1,
+                            Badge_Number = "123",
+                            Email = "mahdi@gmail.com",
+                            Name = "Mahdi",
+                            Password = "Mahdi@123",
+                            Phone = "0599086536",
+                            UserId = "4"
+                        },
+                        new
+                        {
+                            PolicemanId = 2,
+                            Badge_Number = "1521",
+                            Email = "ali@gmail.com",
+                            Name = "Ali",
+                            Password = "Ali@123",
+                            Phone = "0599086777",
+                            UserId = "5"
+                        });
                 });
 
             modelBuilder.Entity("Ecop.DAL.Models.PolicemanDecision", b =>
@@ -349,6 +604,32 @@ namespace Ecop.PL.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            Name = "Citizen",
+                            NormalizedName = "CITIZEN"
+                        },
+                        new
+                        {
+                            Id = "3",
+                            Name = "Police",
+                            NormalizedName = "POLICE"
+                        },
+                        new
+                        {
+                            Id = "4",
+                            Name = "Judge",
+                            NormalizedName = "JUDGE"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -374,80 +655,6 @@ namespace Ecop.PL.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetRoleClaims", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(21)
-                        .HasColumnType("nvarchar(21)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasDiscriminator().HasValue("IdentityUser");
-
-                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -478,12 +685,10 @@ namespace Ecop.PL.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -520,12 +725,10 @@ namespace Ecop.PL.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -533,21 +736,6 @@ namespace Ecop.PL.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("Ecop.DAL.Models.ApplicationUser", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.Property<string>("Address")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("FullName")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasDiscriminator().HasValue("ApplicationUser");
                 });
 
             modelBuilder.Entity("Ecop.DAL.Models.Car", b =>
@@ -577,13 +765,13 @@ namespace Ecop.PL.Data.Migrations
                     b.HasOne("Ecop.DAL.Models.Court", "Court")
                         .WithMany("CourtDecisions")
                         .HasForeignKey("Courtid")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Ecop.DAL.Models.Judge", "Judge")
                         .WithMany("CourtDecisions")
                         .HasForeignKey("JudgeId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Ecop.DAL.Models.PolicemanDecision", "PoliceDecision")
@@ -632,7 +820,7 @@ namespace Ecop.PL.Data.Migrations
                     b.HasOne("Ecop.DAL.Models.Policeman", "Policeman")
                         .WithMany("Decisions")
                         .HasForeignKey("PolicemanDecisionId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Ecop.DAL.Models.TrafficViolation", "TrafficViolation")
@@ -668,7 +856,7 @@ namespace Ecop.PL.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Ecop.DAL.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -677,7 +865,7 @@ namespace Ecop.PL.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Ecop.DAL.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -692,7 +880,7 @@ namespace Ecop.PL.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Ecop.DAL.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -701,7 +889,7 @@ namespace Ecop.PL.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Ecop.DAL.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
